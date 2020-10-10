@@ -2,16 +2,21 @@
 
 Our application is derived from the [TensorFlow Lite Object Detection Android Demo](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android). We add a data logger and support for game controllers to collect datasets with the robot. Currently, we record readings from following sensors: camera, gyroscope, accelerometer, magnetometer, ambient light sensor, and barometer. Using the Android API, we are able to obtain the following sensor readings: RGB images, angular speed, linear acceleration, gravity, magnetic field strength, light intensity, atmospheric pressure, latitude, longitude, altitude, bearing, and speed. In addition to the phone sensors, we also record body sensor readings (wheel odometry, obstacle distance and battery voltage), which are transmitted via the serial link. Lastly, we record control commands received from a connected game controller, if present. We also integrate several neural networks for person following and autonomous navigation.
 
+## DISCLAIMERS
+
+1. **Safety:** Always make sure you operate in a safe environment. Keep in mind, that your phone could be damaged in a collision! Special care is neccessary when using automated control (e.g. person following or driving policy). Make sure you always have a game controller connected and are familiar with the key mapping so you can stop the vehicle at any time. Use at your own risk!
+2. **App under development:** The application is under development and may crash or exhibit unexpected behaviour depending on your phone model and version of the operating system. Make sure to test all functionalities with no wheels connected. Use at your own risk!
+
 ## Getting Started
 
 ### Prerequisites
 
-- Setup [Android Studio](https://developer.android.com/studio/index.html)
+- [Android Studio 3.2 or later](https://developer.android.com/studio/index.html) for building and installing the apk, or otherwise download the apk from the assets of the [latest release](https://github.com/intel-isl/OpenBot/releases/latest).
 - Android device and Android development environment with minimum API 21
-- Android Studio 3.2 or later
 
 ### Building
 
+- In case you are using the apk from the assets of the [latest release](https://github.com/intel-isl/OpenBot/releases/latest), you can skip the below steps and instead just [install](https://www.lifewire.com/install-apk-on-android-4177185) it on your phone directly. Note that that apk is signed with a debug key.
 - Open Android Studio and select *Open an existing Android Studio project*.
 - Select the OpenBot/android directory and click OK.
 - Confirm Gradle Sync if neccessary.
